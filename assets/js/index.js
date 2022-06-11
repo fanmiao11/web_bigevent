@@ -23,26 +23,14 @@ const renderAvator = (user) => {
   const name = user.nickname || user.username;
 
   $('#welcome').html(`欢迎${name}`);
-
-  let inner=''
-
   if (user.user_pic !== null) {
-    // $('.layui-nav-img').attr('src',user.user_pic).show()
-    // $('.text-avatar').hide()
-
-    inner = ` <img src="${user.user_pic}" class="layui-nav-img" /> `;
-
-    $('.userinfo').prepend($(inner));
+    $('.layui-nav-img').attr('src',user.user_pic).show()
+    $('.text-avatar').hide()
   } else {
-
-    // $('.layui-nav-img').hide()
-    // let first = name[0].toUpperCase()
-    // $('.text-avatar').html(first).show()
-
-    inner = `<span class="text-avatar">${name[0].toUpperCase()}</span> `;
+    $('.layui-nav-img').hide()
+    let first = name[0].toUpperCase()
+    $('.text-avatar').html(first).show()
   }
-$('.userinfo').prepend($(inner));
-  //     $('.userinfo').html(inner)
 };
 
 // 获取用户列表
